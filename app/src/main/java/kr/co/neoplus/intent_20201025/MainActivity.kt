@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         sendDataBtn.setOnClickListener {
 //            다른 화면(MySecondActivity)로 이동.
 //            가는길에 데이터(입력한 내용)를 들고 이동
+//            편도티켓
 
             val inputContent = contentEdt.text.toString()
             //여행 티켓
@@ -28,6 +29,13 @@ class MainActivity : AppCompatActivity() {
 
             //실제 탑승
             startActivity(myIntent)
+        }
+
+//        문구 변경 버튼
+        changeTextBtn.setOnClickListener {
+            val myIntent = Intent(this, EditDataActivity::class.java)
+//            왕복티켓
+            startActivityForResult(myIntent, 1000)
 
 
 
