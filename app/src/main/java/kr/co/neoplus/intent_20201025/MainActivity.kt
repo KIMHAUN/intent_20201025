@@ -44,7 +44,7 @@ class ty : AppCompatActivity() {
 //        문구 변경 버튼
         changeTextBtn.setOnClickListener {
             val myIntent = Intent(this, EditDataActivity::class.java)
-//            왕복티켓
+//            왕복티켓, 결과를 받으러 이동하는 코드
             startActivityForResult(myIntent, REQ_FOR_DATA)
         }
     }
@@ -61,11 +61,6 @@ class ty : AppCompatActivity() {
                 val newInputData = data?.getStringExtra("newData")
                 dataTxt.text = newInputData
             }
-
         }
-
-
     }
-
-
 }
