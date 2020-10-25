@@ -11,10 +11,24 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         moveToOtherActivityBtn.setOnClickListener {
-
 //            다른 화면(MyFirstActivity) 으로 이동
             val myIntent = Intent(this, MyFirstActivity::class.java)
             startActivity(myIntent)
+        }
+
+        sendDataBtn.setOnClickListener {
+//            다른 화면(MySecondActivity)로 이동.
+//            가는길에 데이터(입력한 내용)를 들고 이동
+
+            val inputContent = contentEdt.text.toString()
+            //여행 티켓
+            val myIntent = Intent(this, MySecondActivity::class.java)
+            //짐을 들게해줌
+            myIntent.putExtra("content", inputContent);
+
+            //실제 탑승
+            startActivity(myIntent)
+
 
 
 
